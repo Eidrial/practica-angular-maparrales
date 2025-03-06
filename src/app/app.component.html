@@ -1,1 +1,43 @@
-<p class="mt-3 fs-4 text-center text-uppercase">Prueba para probar bootstrap</p>
+<header class="bg-body-tertiary">
+  <h1 class="text-center mx-5">{{title | uppercase}}</h1>
+
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse" id="navbarScroll">
+        <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/bienvenida">Bienvenida</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Opciones varias
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" routerLink="/busqueda">Búsquedas</a></li>
+              <li><a class="dropdown-item" routerLink="/acercade">Acerca de</a></li>
+              <!--<li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>-->
+            </ul>
+          </li>
+        </ul>
+        <form class="d-flex" role="busqueda">
+          <input class="form-control me-2" type="busqueda" placeholder="Escribe aquí tu búsqueda" aria-label="Busqueda">
+          <button class="btn btn-outline-success" type="submit">Búsqueda</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <router-outlet></router-outlet>
+</main>
+
+<footer>
+  <p class="text-center">María Azahara Parrales - &copy;Todos los derechos reservados</p>
+</footer>
