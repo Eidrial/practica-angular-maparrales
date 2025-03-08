@@ -1,27 +1,24 @@
-<header class="bg-body-tertiary">
-  <h1 class="text-center mx-5">{{title | uppercase}}</h1>
+<header class="bg-opacity-75 bg-warning text-warning-emphasis">
+  <h1 class="text-center display-3 display-md-1 mx-5 ">{{title | uppercase}}</h1>
 
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
-      <div class="collapse navbar-collapse" id="navbarScroll">
-        <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+      <button class="navbar-toggler mx-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav mx-auto">
           <li class="nav-item">
-            <a class="nav-link" routerLink="/bienvenida">Home</a>
+            <a class="nav-link active" aria-current="page" href="/bienvenida">Inicio</a>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Links
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" routerLink="/busqueda">Búsquedas</a></li>
-              <li><a class="dropdown-item" routerLink="/acercade">Acerca de</a></li>
-            </ul>
+          <li class="nav-item">
+            <a class="nav-link" href="/busqueda">Búsqueda</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/acercade">Acerca de</a>
           </li>
         </ul>
-        <form class="d-flex" role="busqueda">
-          <input class="form-control me-2" type="busqueda" placeholder="Escribe aquí tu búsqueda" aria-label="Busqueda">
-          <button class="btn btn-outline-success" type="submit">Búsqueda</button>
-        </form>
       </div>
     </div>
   </nav>
@@ -31,6 +28,6 @@
   <router-outlet></router-outlet>
 </main>
 
-<footer class="bg-body-tertiary text-center py-3 fixed-bottom">
+<footer class="bg-opacity-75 bg-warning text-center py-3 fixed-bottom text-warning-emphasis">
   <p class="mb-0">&copy; Todos los derechos reservados ― María Azahara Parrales Cuevas</p>
 </footer>
