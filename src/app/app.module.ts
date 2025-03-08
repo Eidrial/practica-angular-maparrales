@@ -7,6 +7,7 @@ import { PaginaNoEncontrada404Component } from './pagina-no-encontrada404/pagina
 import { AcercaDeComponent } from './acerca-de/acerca-de.component';
 import { BienvenidaComponent } from './bienvenida/bienvenida.component';
 import { BusquedaAlApiComponent } from './busqueda-al-api/busqueda-al-api.component';
+import { provideHttpClient } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { BusquedaAlApiComponent } from './busqueda-al-api/busqueda-al-api.compon
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [provideHttpClient()],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
