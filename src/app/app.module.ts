@@ -8,6 +8,8 @@ import { AcercaDeComponent } from './acerca-de/acerca-de.component';
 import { BienvenidaComponent } from './bienvenida/bienvenida.component';
 import { BusquedaAlApiComponent } from './busqueda-al-api/busqueda-al-api.component';
 import { provideHttpClient } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { TraducirRolPipe } from './traducir-rol.pipe';
 
 @NgModule({
   declarations: [
@@ -15,11 +17,13 @@ import { provideHttpClient } from '@angular/common/http';
     PaginaNoEncontrada404Component,
     AcercaDeComponent,
     BienvenidaComponent,
-    BusquedaAlApiComponent
+    BusquedaAlApiComponent,
+    TraducirRolPipe
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule 
   ],
   providers: [provideHttpClient()],
   bootstrap: [AppComponent]
