@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { ExtraOptions, RouterModule, Routes } from '@angular/router';
 import { PaginaNoEncontrada404Component } from './pagina-no-encontrada404/pagina-no-encontrada404.component';
 import { BienvenidaComponent } from './bienvenida/bienvenida.component';
 import { AcercaDeComponent } from './acerca-de/acerca-de.component';
@@ -13,6 +13,10 @@ const routes: Routes = [
   { path: 'busqueda', component: BusquedaAlApiComponent },
   { path: '**', component: PaginaNoEncontrada404Component }
 ];
+
+const routerOptions: ExtraOptions = {
+  useHash: true, //utiliza el hash en la URL para las rutas
+};
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
