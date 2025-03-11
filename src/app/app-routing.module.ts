@@ -4,6 +4,7 @@ import { PaginaNoEncontrada404Component } from './pagina-no-encontrada404/pagina
 import { BienvenidaComponent } from './bienvenida/bienvenida.component';
 import { AcercaDeComponent } from './acerca-de/acerca-de.component';
 import { BusquedaAlApiComponent } from './busqueda-al-api/busqueda-al-api.component';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 const routes: Routes = [
   { path: '', redirectTo: '/bienvenida', pathMatch: 'full' },
@@ -15,6 +16,9 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [
+    { provide: LocationStrategy, useClass: HashLocationStrategy }  //para que se vea la pagina 404
+  ]
 })
 export class AppRoutingModule { }
