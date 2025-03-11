@@ -18,8 +18,11 @@ export class BusquedaAlApiComponent {
   buscarHeroe(): void {
     if (this.heroeNombre.trim() == '') { //si el campo de busqueda esta vacio
       this.error = 'Por favor introduce un nombre de héroe para buscar.';
+      this.heroes = []; //limpiar heroes
     } else { //si no está vacio
-      this.overwatchservice.buscarPorNombre(this.heroeNombre).subscribe(
+      this.overwatchservice.buscarPorNombre(this.heroeNombre.replace(" ", "-")).subscribe( //los pjs que tienen doble nombre tienen - en vez de un espacio (ej: junker-queen y no junker queen)
+        //por lo tanto, el replace reemplaza SOLO el primer espacio en el nombre (que introduce el usuario) por un - para que la api pueda hacer la busqueda correctamente porque la api espera
+        //ese formato (el usuario introduce junker queen y esto lo convierte a junker-queen para que la api lo detecte)
         (data) => {
           this.heroes = [data];  //se almacena el heroe en el array
           this.error = ''; //limpiar el mensaje de error si la búsqueda fue exitosa
